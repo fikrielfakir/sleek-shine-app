@@ -5,23 +5,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wide ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-bold)] hover:shadow-none transition-[var(--transition-smooth)]",
+        default: "bg-primary text-primary-foreground hover:scale-105 shadow-[var(--shadow-neon-red)] hover:shadow-[var(--shadow-neon-red)] transition-[var(--transition-smooth)]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-[var(--transition-smooth)]",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border-2 border-foreground/20",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:scale-105 shadow-[var(--shadow-bold)] transition-[var(--transition-smooth)] font-semibold",
+        hero: "bg-primary text-primary-foreground hover:scale-105 shadow-[var(--shadow-neon-red)] transition-[var(--transition-smooth)] text-base",
+        neon: "bg-gradient-to-r from-accent via-[hsl(var(--neon-pink))] to-primary text-black hover:scale-105 shadow-[var(--shadow-neon-yellow)] transition-[var(--transition-smooth)]",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-12 px-6 py-3",
+        sm: "h-10 rounded-md px-4",
+        lg: "h-16 rounded-md px-10 text-lg",
+        icon: "h-12 w-12",
       },
     },
     defaultVariants: {
