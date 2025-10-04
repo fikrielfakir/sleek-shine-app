@@ -1,0 +1,61 @@
+Design a modern, bold, and appetizing digital ecosystem for a French fast-food brand specialized in tacos, burgers, salads, and desserts. The solution should include:
+
+🎯 Public Landing Page & Ordering App (Customer Side)
+
+Dark-themed UI with strong contrast: black background, oversized white bold typography, and vibrant food images with accents of red, yellow, orange, and neon tones.
+
+Hero Section: fullscreen video or macro shot of tacos (melting cheese, sizzling meat, crispy fries, fresh sauces) with overlay text: “Savourez nos tacos français – en ligne, à emporter ou en livraison”.
+
+Menu & Ordering Flow:
+
+Grid-based food gallery showcasing tacos as the hero, then burgers, salads, and desserts.
+
+Interactive menu cards with images, descriptions, prices, and Add to Cart buttons.
+
+Quick order process with cart summary, checkout, and multiple payment methods.
+
+Delivery or pickup options.
+
+User Experience: smooth animations (steam rising, cheese pulls, sauce drips) making food look irresistible (La nourriture a l’air délicieuse).
+
+Customer engagement: CTAs like Commander Maintenant with glowing hover effects.
+
+📊 Restaurant Dashboard (For Staff & Management)
+
+Interface for restaurant team to:
+
+View incoming orders in real-time (dine-in, take-away, delivery).
+
+Update order status (pending, preparing, ready, delivered).
+
+Manage menu items (add/remove tacos, change prices, upload photos).
+
+Monitor daily/weekly sales and inventory.
+
+Design style: clean, card-based layout with tables and charts, easy-to-read typography, and food category icons.
+
+🛠️ Admin Dashboard (For Full Control)
+
+Admin Interface to:
+
+Manage restaurants/branches.
+
+Add/edit staff accounts, assign roles & permissions.
+
+Oversee customer accounts & order history.
+
+Generate analytics reports (revenue, best-selling items, customer trends).
+
+Control marketing banners, promotions, and app-wide notifications.
+
+Design style: modern, minimal, intuitive – sidebar navigation, graphs, KPIs, and quick-action buttons.
+
+⚙️ UX Approach
+
+Customer app = fun, delicious, immersive → designed to stimulate appetite and make ordering fast & enjoyable.
+
+Restaurant dashboard = efficient, simple, real-time → optimized for speed and clarity.
+
+Admin dashboard = strategic, powerful, organized → focus on full control, data visualization, and scalability.
+
+Mood: bold, tasty, vibrant, and irresistible for customers — professional, clear, and structured for management.
