@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import type { Order, OrderItem } from "../../shared/schema";
+import type { Order, OrderItem, MenuItem } from "../../shared/schema";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
 
@@ -15,7 +15,13 @@ interface OrderWithItems extends Order {
 
 export default function RestaurantDashboard() {
   const { data: orders, isLoading } = useQuery<OrderWithItems[]>({ queryKey: ["/api/orders"] });
+  const { data: menuItems } = useQuery<MenuItem[]>({ queryKey: ["/api/menu"] });
   const { toast } = useToast();
+
+  const getMenuItemName = (menuItemId: number) => {
+    const item = menuItems?.find(m => m.id === menuItemId);
+    return item?.name || `Article #${menuItemId}`;
+  };
 
   const updateStatusMutation = useMutation({
     mutationFn: async ({ id, status }: { id: number; status: string }) => {
@@ -165,7 +171,7 @@ export default function RestaurantDashboard() {
                       {order.items?.length > 0 ? (
                         order.items.map((item) => (
                           <div key={item.id} className="flex justify-between py-1">
-                            <span>Article #{item.menuItemId} x{item.quantity}</span>
+                            <span>{getMenuItemName(item.menuItemId)} x{item.quantity}</span>
                             <span>{(item.price * item.quantity).toFixed(2)}€</span>
                           </div>
                         ))

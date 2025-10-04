@@ -3,7 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, DollarSign, ShoppingBag, Users, TrendingUp } from "lucide-react";
-import type { Order } from "../../shared/schema";
+import type { Order, OrderItem } from "../../shared/schema";
+
+interface OrderWithItems extends Order {
+  items?: OrderItem[];
+}
 
 interface AnalyticsData {
   totalRevenue: number;
@@ -15,7 +19,7 @@ interface AnalyticsData {
 
 export default function AdminDashboard() {
   const { data: analytics } = useQuery<AnalyticsData>({ queryKey: ["/api/analytics/sales"] });
-  const { data: orders } = useQuery<Order[]>({ queryKey: ["/api/orders"] });
+  const { data: orders } = useQuery<OrderWithItems[]>({ queryKey: ["/api/orders"] });
 
   const recentOrders = orders?.slice(0, 10) || [];
 

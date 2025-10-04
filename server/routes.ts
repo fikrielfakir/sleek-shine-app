@@ -58,7 +58,13 @@ export function registerRoutes(app: Express): Server {
 
   app.get("/api/orders", async (_req, res) => {
     const orders = await storage.orders.getAll();
-    res.json(orders);
+    const ordersWithItems = await Promise.all(
+      orders.map(async (order) => {
+        const items = await storage.orderItems.getByOrderId(order.id);
+        return { ...order, items };
+      })
+    );
+    res.json(ordersWithItems);
   });
 
   app.get("/api/orders/:id", async (req, res) => {
